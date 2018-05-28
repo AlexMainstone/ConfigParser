@@ -8,7 +8,7 @@
 #include<sstream>
 #include<vector>
 
-namespace cnfp {
+namespace cp {
 	std::map<std::string, std::string> getConfig(const char *filepath) {
 		std::map<std::string, std::string> tmpMap;
 		std::ifstream file(filepath);
@@ -26,7 +26,7 @@ namespace cnfp {
 		return tmpMap;
 	}
 
-	void writeMap(std::map<std::string, std::string> map, const char *filepath) {
+	void writeConfig(std::map<std::string, std::string> map, const char *filepath) {
 		std::ofstream file;
 		file.open(filepath);
 		for(std::map<std::string, std::string>::iterator it = map.begin(); it != map.end(); ++it) {
