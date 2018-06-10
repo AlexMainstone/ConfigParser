@@ -18,7 +18,7 @@ These values are then loaded to a map with the variable name being the key
 #include "ConfigParser.h"
 int main() {
   //Load the map
-  std::map<std::string, std::string> configMap = cp::getConfig("Example.conf")
+  std::map<std::string, std::string> configMap = cp_get_config("Example.conf");
   
   //Get value from the map
   createWindow(configMap["Width"], configMap["Height"]);
@@ -27,6 +27,6 @@ int main() {
   configMap["Fullscreen"] = "0";
   
   //Save the changed map
-  cp::writeConfig(configMap, "Example.conf");
+  cp_write_config(configMap, "Example.conf");
 }
 ```
