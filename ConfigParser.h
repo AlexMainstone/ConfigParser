@@ -8,32 +8,29 @@
 #include<sstream>
 #include<vector>
 
-namespace cp {
-	std::map<std::string, std::string> getConfig(const char *filepath) {
-		std::map<std::string, std::string> tmpMap;
-		std::ifstream file(filepath);
-		
-		std::string line;
-		while(getline(file, line)) {
-			std::string key, value;
+static std::map<std::string, std::string> cp_get_config(const char *filepath) {
+	std::map<std::string, std::string> tmpMap;
+	std::ifstream file(filepath);
+	
+	std::string line;
+	while(getline(file, line)) {
+		std::string key, value;
 
-			std::stringstream split(line);
-			std::getline(split, key, '=');
-			std::getline(split, value);
-
-			tmpMap[key] = value;
-		}
-		return tmpMap;
+		std::stringstream split(line);
+		std::getline(split, key, '=');
+		std::getline(split, value);
+		tmpMap[key] = value;
 	}
+	return tmpMap;
+}
 
-	void writeConfig(std::map<std::string, std::string> map, const char *filepath) {
-		std::ofstream file;
-		file.open(filepath);
-		for(std::map<std::string, std::string>::iterator it = map.begin(); it != map.end(); ++it) {
-			file << it->first << "=" << map[it->first] << "\n";
-		}
-		file.close();
+static void cp_write_config(std::map<std::string, std::string> map, const char *filepath) {
+	std::ofstream file;
+	file.open(filepath);
+	for(std::map<std::string, std::string>::iterator it = map.begin(); it != map.end(); ++it) {
+		file << it->first << "=" << map[it->first] << "\n";
 	}
+	file.close();
 }
 
 #endif // CONFIGPARSER_H_
