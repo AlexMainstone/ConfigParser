@@ -4,7 +4,7 @@ Simply drag the header file into your project and include it where needed.
 
 # MathFunctions
 Assorted math functions
-## mf_lerp
+## (float) mf_lerp(float from, float to, float weight)
 ```
 mf_lerp(0.5, 1.5, 0.5); // Returns 1.0
 ```
