@@ -1,8 +1,18 @@
-# ConfigParser
-Header library that parses config files in games.
+
 # Installation
 Simply drag the header file into your project and include it where needed.
-# Example config file
+
+# MathFunctions
+Assorted math functions
+## mf_lerp
+```
+mf_lerp(0.5, 1.5, 0.5); // Returns 1.0
+```
+
+# ConfigParser
+Header library that parses config files in games.
+
+## Example config file
 The library is designed for basic game config files e.g
 ```
 Width=1280
@@ -13,7 +23,7 @@ AA=3
 AnyVariableNameYouWant=AnyValueYouWant
 ```
 These values are then loaded to a map with the variable name being the key
-# Usage
+## Usage
 ```cpp
 #include "ConfigParser.h"
 int main() {
