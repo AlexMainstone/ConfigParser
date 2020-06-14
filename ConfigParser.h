@@ -1,5 +1,4 @@
-#ifndef CONFIGPARSER_H_
-#define CONFIGPARSER_H_
+#pragma once
 
 #include<map>
 #include<string>
@@ -32,5 +31,3 @@ static void cp_write_config(std::map<std::string, std::string> map, const char *
 	}
 	file.close();
 }
-
-#endif // CONFIGPARSER_H_
