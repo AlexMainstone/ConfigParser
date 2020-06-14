@@ -1,5 +1,4 @@
-#ifndef PATHFINDING_H_
-#define PATHFINDING_H_
+#pragma once
 
 #include<vector>
 
@@ -59,4 +58,3 @@ inline std::vector<std::vector<pf_Node>> pf_dijkstra(std::vector<std::vector<int
     } while(!unsorted_pf_Nodes.empty());
     return dijkstra_map;
 }
-#endif // PATHFINDING_H_
